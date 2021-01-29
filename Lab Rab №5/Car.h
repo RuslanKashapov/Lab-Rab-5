@@ -10,17 +10,6 @@ protected:
 	string model;
 	string name = "Car";
 
-void type(int num_of_doors)//метод для автомобиля 
-{
-	if (num_of_doors > 3)
-	{
-		cout << "Обычный автомобиль" << endl;
-	}
-	else
-	{
-		cout << "Немного необычный автомобиль" << endl << endl;
-	}
-}
 //конструктор и деструктор 
 public:
 	Car(int num_of_doors, string model)
@@ -33,6 +22,11 @@ public:
 	virtual ~Car()
 	{
 		cout << "~Car()" << endl;
+	}
+
+	void method()
+	{
+		cout << "Не виртуал - автомобиль" << endl;
 	}
 
 	virtual string classname()
@@ -57,17 +51,6 @@ protected:
 	int weight;
 	string name = "Truck";
 
-	virtual void type(int num_of_doors)//метод для грузовика
-	{
-		if (num_of_doors > 2)
-		{
-			cout << "Грузовой микроавтобус" << endl;
-		}
-		else
-		{
-			cout << "Обычный грузовик" << endl << endl;
-		}
-	}
 public:
 	Truck(int num_of_doors, string model, int weight) :Car(num_of_doors, model)//конструктор с параметрами
 	{
@@ -75,9 +58,14 @@ public:
 		this->weight = weight;
 	}
 
+	void method()
+	{
+		cout << "Виртуал - грузовик" << endl;
+	}
+
 	virtual string classname()
 	{
-		cout << "Виртуальный метод classname (Truck)" << endl;
+		cout << "Виртуальный метод classname (TruckФ)" << endl;
 		return name;
 	}
 
