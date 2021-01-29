@@ -8,8 +8,9 @@ class Car
 protected:
 	int num_of_doors;
 	string model;
+	string name = "Car";
 
-virtual void type(int num_of_doors)//метод для автомобиля 
+void type(int num_of_doors)//метод для автомобиля 
 {
 	if (num_of_doors > 3)
 	{
@@ -33,12 +34,28 @@ public:
 	{
 		cout << "~Car()" << endl;
 	}
+
+	virtual string classname()
+	{
+		cout << "Виртуальный метод classname (Car)" << endl;
+		return name;
+	}
+
+	virtual bool isA(string classname)
+	{
+		cout << "Виртуальный метод isA (Car)" << endl;
+		if (classname == "Car")
+			return 1;
+		else
+			return 0;
+	}
 };
 
 class Truck :public Car
 {
 protected:
 	int weight;
+	string name = "Truck";
 
 	virtual void type(int num_of_doors)//метод для грузовика
 	{
@@ -56,6 +73,21 @@ public:
 	{
 		cout << "Truck(int num_of_doors, string model)" << endl;
 		this->weight = weight;
+	}
+
+	virtual string classname()
+	{
+		cout << "Виртуальный метод classname (Truck)" << endl;
+		return name;
+	}
+
+	virtual bool isA(string classname)
+	{
+		cout << "Виртуальный метод isA (Truck)" << endl;
+		if (classname == "Truck")
+			return 1;
+		else
+			return 0;
 	}
 
 	virtual ~Truck()
