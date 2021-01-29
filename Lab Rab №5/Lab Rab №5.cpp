@@ -4,6 +4,21 @@
 
 using namespace std;
 
+void func1(Base obj)
+{
+	cout << "func1(Base obj)\n";
+}
+
+void func2(Base* obj)
+{
+	cout << "func2(Base* obj)\n";
+}
+
+void func3(Base& obj)
+{
+	cout << "func3(Base& obj)\n";
+}
+
 
 int main()
 {
@@ -43,6 +58,29 @@ int main()
 	delete a;
 	delete b;
 	delete c;
-	delete d;
-	delete e;
+
+	cout << "Работа с классами Base и Desc: " << endl;
+	Base obj1;
+	func1(obj1);
+	cout << endl;
+	Base* obj2 = new Base();
+	func2(obj2);
+	cout << endl;
+	Base obj3;
+	func3(obj3);
+	cout << endl;
+	delete obj2;
+
+	cout << endl << endl;
+	Desc desc1;
+	func1(desc1);
+	cout << endl;
+	Desc* desc2 = new Desc();
+	func2(desc2);
+	cout << endl;
+	Desc desc3;
+	func3(desc3);
+	cout << endl;
+	delete desc2;
+
 }
