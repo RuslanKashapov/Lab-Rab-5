@@ -10,7 +10,6 @@ protected:
 	string model;
 	string name = "Car";
 
-//конструктор и деструктор 
 public:
 	Car(int num_of_doors, string model)
 	{

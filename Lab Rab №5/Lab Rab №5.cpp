@@ -1,5 +1,6 @@
 ﻿#include<iostream>
 #include "Car.h"
+#include "Base.h"
 
 using namespace std;
 
