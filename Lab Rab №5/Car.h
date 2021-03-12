@@ -23,7 +23,7 @@ public:
 		cout << "~Car()" << endl;
 	}
 
-	void method()
+	virtual void method()
 	{
 		cout << "Не виртуал - автомобиль" << endl;
 	}
@@ -68,7 +68,7 @@ public:
 		return name;
 	}
 
-	virtual bool isA(string classname)
+	bool isA(string classname)
 	{
 		cout << "Виртуальный метод isA (Truck)" << endl;
 		if (classname == "Truck")

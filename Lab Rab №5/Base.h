@@ -19,7 +19,7 @@ public:
 		cout << "Конструктор копирования Base(Base &obj)" << endl;
 	}
 
-	~Base() 
+	 virtual ~Base() 
 	{
 		cout << "Деструктор Base ~Base()" << endl;
 	}
@@ -40,7 +40,6 @@ public:
 	{
 		cout << "Конструктор копирования Desc(Desc &obj)" << endl;
 	}
-
 	~Desc()
 	{
 		cout << "Деструктор Desc ~Desc()" << endl;

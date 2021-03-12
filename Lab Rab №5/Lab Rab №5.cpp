@@ -6,17 +6,17 @@ using namespace std;
 
 void func1(Base obj)
 {
-	cout << "func1(Base obj)\n";
+	cout << "func1(Base obj)" << endl;;
 }
 
 void func2(Base* obj)
 {
-	cout << "func2(Base* obj)\n";
+	cout << "func2(Base* obj)" << endl;
 }
 
 void func3(Base& obj)
 {
-	cout << "func3(Base& obj)\n";
+	cout << "func3(Base& obj)" << endl;
 }
 
 
@@ -39,6 +39,8 @@ int main()
 	cout << a->isA("Car");
 	cout << b->isA("Truck");
 	cout << c->isA("Car");
+	cout << endl << endl;
+
 
 	//приведение типов через dynamic_cast
 	cout << "Приведение типов через dynamic_cast: " << endl;
@@ -49,7 +51,7 @@ int main()
 
 	//небезопасное приведение типов
 	Truck* e = new Truck(2, "MAN", 7);
-	if (b->isA("Jeep"))
+	if (b->isA("Truck") == 1)
 		e = (Truck*)b;
 	e->method();
 	b->method();
@@ -59,28 +61,36 @@ int main()
 	delete b;
 	delete c;
 
-	cout << "Работа с классами Base и Desc: " << endl;
+	cout << "Работа с классами Base и Desc: " << endl << endl;
 	Base obj1;
 	func1(obj1);
-	cout << endl;
+	cout << endl << endl;
 	Base* obj2 = new Base();
 	func2(obj2);
-	cout << endl;
+	delete obj2;
+	cout << endl << endl;
 	Base obj3;
 	func3(obj3);
-	cout << endl;
-	delete obj2;
+	cout << endl << endl; 
+
+
 
 	cout << endl << endl;
 	Desc desc1;
 	func1(desc1);
-	cout << endl;
+	cout << endl << endl;
 	Desc* desc2 = new Desc();
 	func2(desc2);
-	cout << endl;
+	delete desc2;
+	cout << endl << endl;
+	cout << endl << endl;
 	Desc desc3;
 	func3(desc3);
-	cout << endl;
-	delete desc2;
+	cout << endl << endl;
 
+	cout << endl << endl;
+	Base* obj4 = new Desc();
+	func2(obj4);
+	delete obj4;
+	cout << endl << endl;
 }
